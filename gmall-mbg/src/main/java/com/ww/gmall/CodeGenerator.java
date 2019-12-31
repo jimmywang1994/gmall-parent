@@ -14,7 +14,7 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 public class CodeGenerator {
     public static void main(String[] args) {
 
-        String moduleName = "oms";
+        String moduleName = "sms";
 
         // 1、创建代码生成器
         AutoGenerator mpg = new AutoGenerator();
