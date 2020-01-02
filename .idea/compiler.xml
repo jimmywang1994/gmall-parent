@@ -10,12 +10,12 @@
         <module name="gmall-sms" />
         <module name="gmall-oms" />
         <module name="gmall-common" />
-        <module name="gmallmbg" />
         <module name="gmallcommon" />
         <module name="gmall-admin-web" />
         <module name="gmallapi" />
-        <module name="gmall-pms" />
+        <module name="gmallmbg" />
         <module name="gmall-api" />
+        <module name="gmall-pms" />
       </profile>
     </annotationProcessing>
   </component>

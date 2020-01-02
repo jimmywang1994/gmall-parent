@@ -4,7 +4,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ww.gmall.pms.entity.Album;
 import com.ww.gmall.pms.mapper.AlbumMapper;
 import com.ww.gmall.pms.service.AlbumService;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
  * @author wwei
  * @since 2019-12-31
  */
+@Component
 @Service
 public class AlbumServiceImpl extends ServiceImpl<AlbumMapper, Album> implements AlbumService {
 
