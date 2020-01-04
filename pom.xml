@@ -12,7 +12,6 @@
         <module>gmall-common</module>
         <module>gmall-api</module>
         <module>gmall-mbg</module>
-        <module>gmall-mbg</module>
     </modules>
 
 

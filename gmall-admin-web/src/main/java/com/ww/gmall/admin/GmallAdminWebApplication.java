@@ -1,9 +1,14 @@
 package com.ww.gmall.admin;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+import org.mapstruct.Mapper;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@EnableDubbo
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class GmallAdminWebApplication {
 
     public static void main(String[] args) {

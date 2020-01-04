@@ -21,15 +21,15 @@ class GmallPmsApplicationTests {
 
     @Test
     void contextLoads() {
-//        Product product = productService.getById("1");
-//        System.out.println(product.getBrandName());
+        Product product = productService.getById("1");
+        System.out.println(product.getBrandName());
 
         //测试增删改在主库，查在从库
 //        Brand brand = new Brand();
 //        brand.setName("哈哈");
 //        brandService.save(brand);
-        Brand byId = brandService.getById(53);
-        System.out.println(byId.getName());
+//        Brand byId = brandService.getById(53);
+//        System.out.println(byId.getName());
     }
 
 }
