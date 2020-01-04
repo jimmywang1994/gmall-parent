@@ -1,4 +1,4 @@
-package com.ww.gmall.admin.pms.vo;
+package com.ww.gmall.pms.vo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -20,5 +20,8 @@ public class PmsProductQueryParam {
     private Long productCategoryId;
     @ApiModelProperty("商品品牌编号")
     private Long brandId;
+
+    private Long pageSize = 8L;
+    private Long pageNum = 1L;
 
 }

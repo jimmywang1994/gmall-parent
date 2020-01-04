@@ -1,6 +1,5 @@
-package com.ww.gmall.admin.pms.vo;
+package com.ww.gmall.pms.vo;
 
-import com.ww.gmall.admin.validator.FlagValidator;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -21,10 +20,8 @@ public class PmsProductCategoryParam {
     @ApiModelProperty("分类单位")
     private String productUnit;
     @ApiModelProperty("是否在导航栏显示")
-    @FlagValidator(value = {"0","1"},message = "状态只能为0或1")
     private Integer navStatus;
     @ApiModelProperty("是否进行显示")
-    @FlagValidator(value = {"0","1"},message = "状态只能为0或1")
     private Integer showStatus;
     @ApiModelProperty("排序")
     @Min(value = 0,message = "排序最小为0")

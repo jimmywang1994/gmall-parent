@@ -1,4 +1,4 @@
-package com.ww.gmall.admin.pms.vo;
+package com.ww.gmall.pms.vo;
 
 import com.ww.gmall.pms.entity.ProductAttribute;
 import com.ww.gmall.pms.entity.ProductAttributeCategory;

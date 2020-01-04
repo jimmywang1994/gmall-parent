@@ -1,7 +1,7 @@
 package com.ww.gmall.admin.pms.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.ww.gmall.admin.pms.vo.PmsBrandParam;
+import com.ww.gmall.pms.vo.PmsBrandParam;
 import com.ww.gmall.pms.entity.Brand;
 import com.ww.gmall.pms.service.BrandService;
 import com.ww.gmall.to.CommonResult;

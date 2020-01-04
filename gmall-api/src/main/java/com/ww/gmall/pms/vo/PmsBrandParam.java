@@ -1,6 +1,5 @@
-package com.ww.gmall.admin.pms.vo;
+package com.ww.gmall.pms.vo;
 
-import com.ww.gmall.admin.validator.FlagValidator;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -21,10 +20,8 @@ public class PmsBrandParam {
     @Min(value = 0, message = "排序最小为0")
     private Integer sort;
     @ApiModelProperty(value = "是否为厂家制造商")
-    @FlagValidator(value = {"0","1"}, message = "厂家状态不正确")
     private Integer factoryStatus;
     @ApiModelProperty(value = "是否进行显示")
-    @FlagValidator(value = {"0","1"}, message = "显示状态不正确")
     private Integer showStatus;
     @ApiModelProperty(value = "品牌logo",required = true)
     @NotEmpty(message = "品牌logo不能为空")
