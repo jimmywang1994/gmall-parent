@@ -12,6 +12,7 @@ import com.ww.gmall.vo.PageInfoVo;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 /**
  * <p>
@@ -31,7 +32,22 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     public PageInfoVo productPageInfo(PmsProductQueryParam productQueryParam) {
         QueryWrapper wrapper = new QueryWrapper();
-        IPage<Product> productPage = productMapper.selectPage(new Page<Product>(productQueryParam.getPageNum(), productQueryParam.getPageSize()), null);
+        if (!StringUtils.isEmpty(productQueryParam.getKeyword())) {
+            wrapper.like("name", productQueryParam.getKeyword());
+        }
+        if (null != productQueryParam.getBrandId()) {
+            wrapper.eq("brand_id", productQueryParam.getBrandId());
+        }
+        if(!StringUtils.isEmpty(productQueryParam.getProductSn())){
+            wrapper.eq("product_sn",productQueryParam.getProductSn());
+        }
+        if(null!=productQueryParam.getPublishStatus()){
+            wrapper.eq("publish_status",productQueryParam.getPublishStatus());
+        }
+        if(null!=productQueryParam.getVerifyStatus()){
+            wrapper.eq("verify_status",productQueryParam.getVerifyStatus());
+        }
+        IPage<Product> productPage = productMapper.selectPage(new Page<Product>(productQueryParam.getPageNum(), productQueryParam.getPageSize()), wrapper);
         PageInfoVo pageInfoVo = new PageInfoVo(productPage.getTotal(), productPage.getPages(), productPage.getSize(), productPage.getRecords(), productPage.getCurrent());
         return pageInfoVo;
     }

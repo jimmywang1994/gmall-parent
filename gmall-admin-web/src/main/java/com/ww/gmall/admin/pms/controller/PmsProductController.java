@@ -1,6 +1,5 @@
 package com.ww.gmall.admin.pms.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.ww.gmall.pms.vo.PmsProductParam;
 import com.ww.gmall.pms.vo.PmsProductQueryParam;
 import com.ww.gmall.pms.service.ProductService;
@@ -8,6 +7,7 @@ import com.ww.gmall.to.CommonResult;
 import com.ww.gmall.vo.PageInfoVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +17,7 @@ import java.util.List;
  * 商品管理Controller
  */
 @RestController
+@CrossOrigin
 @Api(tags = "PmsProductController", description = "商品管理")
 @RequestMapping("/product")
 public class PmsProductController {
@@ -52,7 +53,7 @@ public class PmsProductController {
                           @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
         //TODO 查询商品
         PageInfoVo pageInfoVo=productService.productPageInfo(productQueryParam);
-        return new CommonResult().success(null);
+        return new CommonResult().success(pageInfoVo);
     }
 
     @ApiOperation("根据商品名称或货号模糊查询")

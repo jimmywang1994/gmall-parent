@@ -18,6 +18,7 @@ import java.util.List;
  * 商品分类模块Controller
  */
 @RestController
+@CrossOrigin
 @Api(tags = "PmsProductCategoryController", description = "商品分类管理")
 @RequestMapping("/productCategory")
 public class PmsProductCategoryController {

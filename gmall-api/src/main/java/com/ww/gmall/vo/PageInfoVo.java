@@ -3,10 +3,11 @@ package com.ww.gmall.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class PageInfoVo {
+public class PageInfoVo implements Serializable {
     @ApiModelProperty("总记录数")
     private Long total;
     @ApiModelProperty("总页码")
