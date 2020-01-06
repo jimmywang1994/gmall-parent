@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ww.gmall.pms.entity.ProductCategory;
 import com.ww.gmall.pms.mapper.ProductCategoryMapper;
 import com.ww.gmall.pms.service.ProductCategoryService;
+import com.ww.gmall.pms.vo.PmsProductCategoryWithChildrenItem;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +21,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMapper, ProductCategory> implements ProductCategoryService {
 
+    @Autowired
+    ProductCategoryMapper productCategoryMapper;
+    @Override
+    public List<PmsProductCategoryWithChildrenItem> listCatalogWithChildren(Integer i) {
+        List<PmsProductCategoryWithChildrenItem> item=productCategoryMapper.listCatalogWithChildren(i);
+        return item;
+    }
 }

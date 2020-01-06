@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author wwei
- * @since 2019-12-31
+ * @since 2020-01-06
  */
 public interface ProductVertifyRecordMapper extends BaseMapper<ProductVertifyRecord> {
 

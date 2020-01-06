@@ -6,16 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gmall-mbg" />
+        <module name="gmall-ums" />
         <module name="gmall-sms" />
         <module name="gmall-oms" />
         <module name="gmall-common" />
-        <module name="gmallapi" />
         <module name="gmallcommon" />
         <module name="gmall-admin-web" />
-        <module name="gmall-api" />
+        <module name="gmallapi" />
         <module name="gmallmbg" />
-        <module name="gmall-ums" />
+        <module name="gmall-api" />
         <module name="gmall-pms" />
       </profile>
     </annotationProcessing>

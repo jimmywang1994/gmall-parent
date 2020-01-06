@@ -1,11 +1,12 @@
 package com.ww.gmall.admin.pms.controller;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.ww.gmall.pms.vo.PmsProductCategoryParam;
 import com.ww.gmall.pms.service.ProductCategoryService;
+import com.ww.gmall.pms.vo.PmsProductCategoryWithChildrenItem;
 import com.ww.gmall.to.CommonResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -83,7 +84,8 @@ public class PmsProductCategoryController {
     @ApiOperation("查询所有一级分类及子分类[有难度]")
     @GetMapping(value = "/list/withChildren")
     public Object listWithChildren() {
-        //TODO 查询所有一级分类及子分类
+        //TODO 查询所有一级分类及子分类,查询任意菜单及他下面所有的子菜单
+        List<PmsProductCategoryWithChildrenItem> item=productCategoryService.listCatalogWithChildren(0);
         return new CommonResult().success(null);
     }
 }
