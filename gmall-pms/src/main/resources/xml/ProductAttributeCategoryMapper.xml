@@ -6,5 +6,30 @@
     <sql id="Base_Column_List">
         id, name, attribute_count, param_count
     </sql>
+    <!-- List<PmsProductCategoryWithChildrenItem> listCatalogWithChildren(Integer i);-->
+    <select id="listCatalogWithChildren" resultMap="ExtendResultMap">
+        select * from pms_product_category where parent_id=#{i}
+    </select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ww.gmall.pms.entity.ProductCategory">
+        <id column="id" property="id" />
+        <result column="parent_id" property="parentId" />
+        <result column="name" property="name" />
+        <result column="level" property="level" />
+        <result column="product_count" property="productCount" />
+        <result column="product_unit" property="productUnit" />
+        <result column="nav_status" property="navStatus" />
+        <result column="show_status" property="showStatus" />
+        <result column="sort" property="sort" />
+        <result column="icon" property="icon" />
+        <result column="keywords" property="keywords" />
+        <result column="description" property="description" />
+    </resultMap>
 
+    <resultMap id="ExtendResultMap" type="com.ww.gmall.pms.vo.PmsProductCategoryWithChildrenItem"
+               extends="BaseResultMap">
+        <collection property="children" select="listCatalogWithChildren" column="id">
+
+        </collection>
+    </resultMap>
 </mapper>
