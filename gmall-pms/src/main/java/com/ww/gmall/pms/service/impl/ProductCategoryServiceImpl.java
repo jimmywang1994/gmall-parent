@@ -5,8 +5,9 @@ import com.ww.gmall.pms.entity.ProductCategory;
 import com.ww.gmall.pms.mapper.ProductCategoryMapper;
 import com.ww.gmall.pms.service.ProductCategoryService;
 import com.ww.gmall.pms.vo.PmsProductCategoryWithChildrenItem;
+import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * @author wwei
  * @since 2019-12-31
  */
+@Component
 @Service
 public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMapper, ProductCategory> implements ProductCategoryService {
 

@@ -12,9 +12,9 @@
         <module name="gmall-common" />
         <module name="gmallcommon" />
         <module name="gmall-admin-web" />
-        <module name="gmallapi" />
-        <module name="gmallmbg" />
         <module name="gmall-api" />
+        <module name="gmallmbg" />
+        <module name="gmallapi" />
         <module name="gmall-pms" />
       </profile>
     </annotationProcessing>
