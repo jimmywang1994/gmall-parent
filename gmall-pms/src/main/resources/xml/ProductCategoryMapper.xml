@@ -7,7 +7,7 @@
         id, parent_id, name, level, product_count, product_unit, nav_status, show_status, sort, icon, keywords, description
     </sql>
     <!-- List<PmsProductCategoryWithChildrenItem> listCatalogWithChildren(Integer i);-->
-    <select id="listCatalogWithChildren" resultMap="BaseResultMap">
+    <select id="listCatalogWithChildren" resultMap="ExtendResultMap">
         select * from pms_product_category where parent_id=#{i}
     </select>
     <!-- 通用查询映射结果 -->
